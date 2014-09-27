@@ -111,7 +111,7 @@ public class CPD3314Assign4 {
      * For example, if a train travels 40 miles-per-hour for three hours, the 
      * distance traveled is 120 miles. Write a program that asks for the speed 
      * of a vehicle (in miles-per-hour) and the number of hours it has traveled. 
-     * It should use a loop ti display the distance a vehicle has traveled for 
+     * It should use a loop to display the distance a vehicle has traveled for 
      * each hour of a time period specified by the user. For example, if a 
      * vehicle is traveling at 40mph for a three-hour time period, it should 
      * output a report similar to the one that follows to a file named 
@@ -174,20 +174,21 @@ public class CPD3314Assign4 {
      *     F = (9.0/5.0) * C + 32
      * where F is the Fahrenheit temperature and C is the Celsius temperature. 
      * Your program must use a loop to display the table.
+     * Round your answers to one decimal place.
      * 
      * Sample Output:
      * ==============
-     *   C      F
-     *   ----------
-     *   0      32
-     *   .      .
-     *   .      .
-     *   .      .
-     *   20     68
-     *   .      .
-     *   .      .
-     *   .      .
-     *   100    212
+     *   C        F
+     *   -------------
+     *   0.0      32.0
+     *   .        .
+     *   .        .
+     *   .        .
+     *   20.0     68.0
+     *   .        .
+     *   .        .
+     *   .        .
+     *   100.0    212.0
      */
     public static void doExercise11() {
         // TODO: Complete Exercise 11 Below
@@ -219,11 +220,11 @@ public class CPD3314Assign4 {
     /*
      * Exercise 17 & 18 - Random Number Guessing Game with Enhancement
      * 
-     * Write a program that generates a random number and asks the user to guess 
-     * what the number is. If the user's guess is higher than the random number, 
-     * the program should display "Too high, try again." If the user's guess is 
-     * lower than the random number, the program should display "Too low, try 
-     * again." The program should use a loop that repeats until the user 
+     * Write a program that generates a random number 1-50 and asks the user to 
+     * guess what the number is. If the user's guess is higher than the random 
+     * number, the program should display "Too high, try again." If the user's 
+     * guess is lower than the random number, the program should display "Too 
+     * low, try again." The program should use a loop that repeats until the user 
      * correctly guesses the random number. Make the program keep count of the 
      * number of guesses that the user makes. When the user correctly guesses 
      * the random number, the program should display the number of guesses.
@@ -233,16 +234,16 @@ public class CPD3314Assign4 {
      * 
      * Sample Output:
      * ==============
-     *   Guess my number:
+     *   Guess my number (1-50):
      *   40
      *   Too high, try again.
-     *   Guess my number:
+     *   Guess my number (1-50):
      *   30
      *   Too low, try again.
-     *   Guess my number:
+     *   Guess my number (1-50):
      *   35
      *   Too high, try again.
-     *   Guess my number:
+     *   Guess my number (1-50):
      *   32
      *   Correct! That took 7 attempts.
      */
