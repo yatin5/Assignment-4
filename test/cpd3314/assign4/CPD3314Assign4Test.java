@@ -19,6 +19,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Random;
 import java.util.Scanner;
@@ -106,7 +107,12 @@ public class CPD3314Assign4Test {
         String[] hours = {"1", "2", "3", "4", "5"};
         String[] miles = {"60", "120", "180", "240", "300"};
 
+        try {
         CPD3314Assign4.doExercise3();
+        }
+        catch (IOException ex) {
+            fail("Unexpected IO Exception: " + ex.getMessage());
+        }
 
         try {
             File file = new File("ex3output.txt");
@@ -164,8 +170,8 @@ public class CPD3314Assign4Test {
             double F = (9.0 / 5.0) * C + 32;
             String expectedC = String.format("%.1f", C);
             String expectedF = String.format("%.1f", F);
-            String actualLine = actual[i + iC];
             if (i + C < actual.length) {
+                String actualLine = actual[i + iC];            
                 assertTrue("Checking if \"" + actualLine + "\" contains: " + expectedC + " and " + expectedF,
                         (actualLine.contains(expectedC) && actualLine.contains(expectedF)));
             } else {
@@ -201,14 +207,19 @@ public class CPD3314Assign4Test {
             "14:   Sings this to thee: 'Thou single wilt prove none.'"
         };
 
+        try {
         CPD3314Assign4.doExercise14();
+        }
+        catch (IOException ex) {
+            fail("Unexpected IO Exception: " + ex.getMessage());
+        }
 
         String[] actual = outContent.toString().split("\n");
         int offset = 0;
         while (!actual[offset].contains(expected[0])) {
             offset++;
         }
-        for (int i = 0; i < actual.length; i++) {
+        for (int i = 0; i < actual.length - offset; i++) {
             String input = actual[i + offset];
             assertTrue("Checking if \"" + input + "\" contains: " + expected[i],
                     input.contains(expected[i]));
