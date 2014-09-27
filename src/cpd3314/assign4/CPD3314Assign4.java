@@ -19,8 +19,10 @@
  * Objects. (5th ed.). Upper Saddle River, NJ: Pearson Education.
  * ISBN: 978-0-13-285583-9
  */
-
 package cpd3314.assign4;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 /**
  *
@@ -32,9 +34,55 @@ public class CPD3314Assign4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner input = new Scanner(System.in);
+        String[] questions = {
+            "1. Sum of Numbers",
+            "3. Distance Traveled File",
+            "10. Largest and Smallest",
+            "11. Celsius and Fahrenheit Table",
+            "14. Line Numbers",
+            "18. Random Number Guessing Game"
+        };
+        int choice = 0;
+        do {
+            for (String q : questions) {
+                System.out.println(q);
+            }
+            System.out.print("Which Exercise Do You Want to View? (0 to quit): ");
+            try {
+                choice = input.nextInt();
+                switch (choice) {
+                    case 1:
+                        doExercise1();
+                        break;
+                    case 3:
+                        doExercise3();
+                        break;
+                    case 10:
+                        doExercise10();
+                        break;
+                    case 11:
+                        doExercise11();
+                        break;
+                    case 14:
+                        doExercise14();
+                        break;
+                    case 18:
+                        doExercise18();
+                        break;
+                    case 0:
+                        System.out.println("Goodbye!");
+                        break;
+                    default:
+                        System.out.println("Not a valid choice.");
+                        break;
+                }
+            } catch (InputMismatchException ex) {
+                System.out.println("That is not a valid choice.");
+            }
+        } while (choice != 0);
     }
-    
+
     /*
      * Exercise #1 - Sum of Numbers
      *
@@ -51,38 +99,40 @@ public class CPD3314Assign4 {
      *   The sum of all integers up to 50 is 1275.
      */
     public static void doExercise1() {
-        
+        // TODO: Com[plete Exercise 1 Below
+
     }
-    
-   /*
-    * Exercise #2 & 3 - Distance Traveled File
-    * 
-    * The distance a vehicle travels can be calculated as follows:
-    *     Distance = Speed * Time
-    * For example, if a train travels 40 miles-per-hour for three hours, the 
-    * distance traveled is 120 miles. Write a program that asks for the speed 
-    * of a vehicle (in miles-per-hour) and the number of hours it has traveled. 
-    * It should use a loop ti display the distance a vehicle has traveled for 
-    * each hour of a time period specified by the user. For example, if a 
-    * vehicle is traveling at 40mph for a three-hour time period, it should 
-    * output a report similar to the one that follows to a file named 
-    * "ex3output.txt":
-    * 
-    * ex3output.txt:
-    * ==============
-    *   Hour    Distance Traveled
-    *   -------------------------
-    *   1               40
-    *   2               80
-    *   3              120
-    * 
-    * Input Validation: Do not accept a negative number for speed and do not 
-    * accept any value less than 1 for time traveled.
-    */
+
+    /*
+     * Exercise #2 & 3 - Distance Traveled File
+     * 
+     * The distance a vehicle travels can be calculated as follows:
+     *     Distance = Speed * Time
+     * For example, if a train travels 40 miles-per-hour for three hours, the 
+     * distance traveled is 120 miles. Write a program that asks for the speed 
+     * of a vehicle (in miles-per-hour) and the number of hours it has traveled. 
+     * It should use a loop ti display the distance a vehicle has traveled for 
+     * each hour of a time period specified by the user. For example, if a 
+     * vehicle is traveling at 40mph for a three-hour time period, it should 
+     * output a report similar to the one that follows to a file named 
+     * "ex3output.txt":
+     * 
+     * ex3output.txt:
+     * ==============
+     *   Hour    Distance Traveled
+     *   -------------------------
+     *   1               40
+     *   2               80
+     *   3              120
+     * 
+     * Input Validation: Do not accept a negative number for speed and do not 
+     * accept any value less than 1 for time traveled.
+     */
     public static void doExercise3() {
-        
+        // TODO: Complete Exercise 2 & 3 Below
+
     }
-    
+
     /*
      * Exercise 10 - Largest and Smallest
      * 
@@ -110,7 +160,11 @@ public class CPD3314Assign4 {
      *   Smallest number is 3.
      *   Largest number is 7.
      */
-    
+    public static void doExercise10() {
+        // TODO: Complete Exercise 10 Below
+
+    }
+
     /*
      * Exercise 11 - Celsius to Fahrenheit Table
      * 
@@ -135,8 +189,12 @@ public class CPD3314Assign4 {
      *   .      .
      *   100    212
      */
-    
-    /**
+    public static void doExercise11() {
+        // TODO: Complete Exercise 11 Below
+
+    }
+
+    /*
      * Exercise 14 - Line Numbers
      * 
      * Write a program that asks the user for the name of a file. The program 
@@ -153,9 +211,13 @@ public class CPD3314Assign4 {
      *   3: But you shall shine more bright in these contents
      *   ...
      */
-    
+    public static void doExercise14() {
+        // TODO: Complete Exercise 14 Below
+
+    }
+
     /*
-     * Exercise 17 - Random Number Guessing Game with Enhancement
+     * Exercise 17 & 18 - Random Number Guessing Game with Enhancement
      * 
      * Write a program that generates a random number and asks the user to guess 
      * what the number is. If the user's guess is higher than the random number, 
@@ -184,4 +246,8 @@ public class CPD3314Assign4 {
      *   32
      *   Correct! That took 7 attempts.
      */
+    public static void doExercise18() {
+        // TODO: Complete Exercise 17 & 18 Below
+        
+    }
 }
