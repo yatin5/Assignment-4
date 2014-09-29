@@ -214,8 +214,8 @@ public class CPD3314Assign4Test {
             "10: Strikes each in each by mutual ordering;",
             "11: Resembling sire and child and happy mother,",
             "12: Who, all in one, one pleasing note do sing:",
-            "13:   Whose speechless song being many, seeming one,",
-            "14:   Sings this to thee: 'Thou single wilt prove none.'"
+            "13:    Whose speechless song being many, seeming one,",
+            "14:    Sings this to thee: 'Thou single wilt prove none.'"
         };
 
         try {
