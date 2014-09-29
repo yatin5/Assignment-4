@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
 import org.junit.After;
@@ -100,6 +101,13 @@ public class CPD3314Assign4Test {
      */
     @Test
     public void testDoExercise3() {
+        try {
+            PrintWriter pw = new PrintWriter("ex3output.txt");
+            pw.println();
+            pw.close();
+        } catch (IOException ex) {
+            System.err.println("Unexpected IO Exception: " + ex.getMessage());
+        }
         String fakeInput = "60\n5\n";
         byte[] fakeInputArray = fakeInput.getBytes();
         System.setIn(new ByteArrayInputStream(fakeInputArray));
@@ -108,16 +116,18 @@ public class CPD3314Assign4Test {
         String[] miles = {"60", "120", "180", "240", "300"};
 
         try {
-        CPD3314Assign4.doExercise3();
-        }
-        catch (IOException ex) {
-            fail("Unexpected IO Exception: " + ex.getMessage());
+            CPD3314Assign4.doExercise3();
+        } catch (Exception ex) {
+            fail("Unexpected Exception: " + ex.getMessage());
         }
 
         try {
             File file = new File("ex3output.txt");
             Scanner actual = new Scanner(file);
             int i = 0;
+            if (!actual.hasNext()) {
+                fail("Output file is empty.");
+            }
             while (actual.hasNext()) {
                 String input = actual.nextLine();
                 if (input.contains(hours[i])) {
@@ -171,7 +181,7 @@ public class CPD3314Assign4Test {
             String expectedC = String.format("%.1f", C);
             String expectedF = String.format("%.1f", F);
             if (i + C < actual.length) {
-                String actualLine = actual[i + iC];            
+                String actualLine = actual[i + iC];
                 assertTrue("Checking if \"" + actualLine + "\" contains: " + expectedC + " and " + expectedF,
                         (actualLine.contains(expectedC) && actualLine.contains(expectedF)));
             } else {
@@ -208,10 +218,9 @@ public class CPD3314Assign4Test {
         };
 
         try {
-        CPD3314Assign4.doExercise14();
-        }
-        catch (IOException ex) {
-            fail("Unexpected IO Exception: " + ex.getMessage());
+            CPD3314Assign4.doExercise14();
+        } catch (Exception ex) {
+            fail("Unexpected Exception: " + ex.getMessage());
         }
 
         String[] actual = outContent.toString().split("\n");
