@@ -226,6 +226,9 @@ public class CPD3314Assign4Test {
 
         String[] actual = outContent.toString().split("\n");
         int offset = 0;
+        if (actual.length < expected.length) {
+            fail("Output does not have enough lines.");
+        }
         while (!actual[offset].contains(expected[0])) {
             offset++;
         }
