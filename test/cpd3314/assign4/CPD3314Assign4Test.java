@@ -133,6 +133,7 @@ public class CPD3314Assign4Test {
                 if (input.contains(hours[i])) {
                     assertTrue("Checking if \"" + input + "\" contains expected result: " + hours[i] + "\t" + miles[i],
                             input.contains(hours[i]) && input.contains(miles[i]));
+                    i++;
                 }
             }
         } catch (FileNotFoundException ex) {
